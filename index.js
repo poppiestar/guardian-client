@@ -9,7 +9,7 @@ server.connection({ port: 4000 });
 
 server.views({
     engines: {
-        'hb': {
+        'hbs': {
             module: require('handlebars'),
             compileMode: 'sync'
         }
