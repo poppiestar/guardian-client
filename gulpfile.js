@@ -13,9 +13,9 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function () {
-    return browserify('./src/js/test.js')
+    return browserify('./src/js/app.js')
         .bundle()
-        .pipe(source('test.js'))
+        .pipe(source('app.js'))
         .pipe(gulp.dest('./public/js'));
 });
 
