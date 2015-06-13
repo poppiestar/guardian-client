@@ -2,6 +2,8 @@
 var Backbone = require('backbone');
 Backbone.$ = require('jquery');
 
+var HomeView = require('../views/HomeView');
+
 module.exports = Backbone.Router.extend({
 
     routes: {
@@ -9,7 +11,7 @@ module.exports = Backbone.Router.extend({
     },
 
     defaultRoute: function () {
-        console.log('default route');
+        this.view = new HomeView();
     }
     
 });
