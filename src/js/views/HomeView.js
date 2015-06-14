@@ -1,13 +1,16 @@
 
 var $ = require('jquery');
 var Backbone = require('backbone');
+var _ = require('underscore');
 Backbone.$ = $;
+
+var template = require('../templates/Home.html');
 
 module.exports = Backbone.View.extend({
 
-    tagName: 'div',
+    el: '#body',
 
-    id: 'thingy',
+    template: _.template(template),
 
     initialize: function () {
         $('body').html(this.el);
@@ -15,7 +18,7 @@ module.exports = Backbone.View.extend({
     },
 
     render: function () {
-        this.$el.html('<h1>This is a test</h1>');
+        this.$el.html(this.template());
     }
 
 });

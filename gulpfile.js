@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var stylint = require('gulp-stylint');
 var browserify = require('browserify');
+var stringify = require('stringify');
 var source = require('vinyl-source-stream');
 
 gulp.task('css', function () {
@@ -13,7 +14,11 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function () {
-    return browserify('./src/js/app.js')
+    return browserify('./src/js/app.js', {
+        transform: stringify({
+                extensions: ['.html'], minify:true
+            })
+        })
         .bundle()
         .pipe(source('app.js'))
         .pipe(gulp.dest('./public/js'));
