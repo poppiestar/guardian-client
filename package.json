@@ -12,6 +12,7 @@
     "backbone": "^1.2.1",
     "good": "^6.1.4",
     "good-console": "^5.0.2",
+    "handlebars": "^3.0.3",
     "hapi": "^8.6.1",
     "jquery": "^2.1.4",
     "underscore": "^1.8.3"
