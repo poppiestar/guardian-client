@@ -1,8 +1,7 @@
 
-var $ = require('jquery');
 var Backbone = require('backbone');
 var _ = require('underscore');
-Backbone.$ = $;
+Backbone.$ = require('jquery');
 
 var template = require('../templates/Home.html');
 
@@ -12,13 +11,24 @@ module.exports = Backbone.View.extend({
 
     template: _.template(template),
 
+    events: {
+        'submit #login': 'submitForm'
+    },
+
     initialize: function () {
-        $('body').html(this.el);
         this.render();
     },
 
     render: function () {
         this.$el.html(this.template());
+
+        return this;
+    },
+
+    submitForm: function (e) {
+        e.preventDefault();
+
+        Backbone.history.navigate('status', true);
     }
 
 });
