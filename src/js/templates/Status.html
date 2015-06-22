@@ -1,4 +1,14 @@
 <h2><%= username %> <span class="system-logo system-logo--psn">(PSN)</span></h2>
 
+<p>Available: <%= available ? 'Yes' : 'No' %>
 <p class="current-status"><%= status %></p>
+
+<h2>Friends</h2>
+
+<% if (friends.length > 0) { %>
+<ul class="friends">
+</ul>
+<% } else { %>
+<p>You have no friends.</p>
+<% } %>
 
