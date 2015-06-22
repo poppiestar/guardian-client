@@ -1,9 +1,10 @@
 
 var Backbone = require('backbone');
 var _ = require('underscore');
-Backbone.$ = require('jquery');
 
 var template = require('../templates/Status.html');
+
+var FriendView = require('./FriendView');
 
 var data = {
     username: 'poppiestar95',
@@ -20,6 +21,12 @@ module.exports = Backbone.View.extend({
 
     render: function () {
         this.$el.html(this.template(data));
+        var friendsList = this.$el.find('ul');
+
+        _.each(data.friends, function (friend) {
+            var friendView = new FriendView(friend);
+            friendsList.append(friendView.render().el);
+        });
 
         return this;
     }
