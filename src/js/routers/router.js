@@ -8,7 +8,6 @@ var StatusView = require('../views/StatusView');
 module.exports = Backbone.Router.extend({
 
     initialize: function () {
-        console.log('router init');
         this.layout = new LayoutView();
         this.layout.render();
     },
@@ -19,13 +18,17 @@ module.exports = Backbone.Router.extend({
     },
 
     status: function () {
-        this.view = new StatusView();
-        this.layout.regions['content'].html(this.view.render().el);
+        this.setRegion('content', new StatusView());
     },
 
     defaultRoute: function () {
-        this.view = new HomeView();
-        this.layout.regions['content'].html(this.view.render().el);
+        this.setRegion('content', new HomeView());
+    },
+
+    setRegion: function (region, view) {
+        if (this.view) this.view.remove();
+        this.view = view;
+        this.layout.regions[region].html(view.render().el);
     }
     
 });
