@@ -3,7 +3,7 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 
 var template = require('../templates/Status.html');
-var StatusModel = require('../models/StatusModel');
+var GuardianModel = require('../models/GuardianModel');
 var FriendView = require('./FriendView');
 
 module.exports = Backbone.View.extend({
@@ -13,7 +13,7 @@ module.exports = Backbone.View.extend({
     template: _.template(template),
 
     initialize: function () {
-        this.model = new StatusModel({
+        this.model = new GuardianModel({
             username: 'poppiestar95',
             available: true,
             status: 'Hunting for Word of Crota, anyone fancy Crota HM?',
@@ -26,7 +26,12 @@ module.exports = Backbone.View.extend({
         var friendsList = this.$el.find('ul');
 
         _.each(this.model.get('friends'), function (friend) {
-            var friendView = new FriendView(friend);
+            var friendModel = new GuardianModel({
+                username: friend
+            });
+            var friendView = new FriendView({
+                model: friendModel
+            });
             friendsList.append(friendView.render().el);
         });
 

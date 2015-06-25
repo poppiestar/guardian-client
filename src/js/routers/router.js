@@ -3,7 +3,7 @@ var Backbone = require('backbone');
 
 var LayoutView = require('../views/LayoutView');
 var HomeView = require('../views/HomeView');
-var StatusView = require('../views/StatusView');
+var GuardianView = require('../views/GuardianView');
 
 module.exports = Backbone.Router.extend({
 
@@ -18,7 +18,7 @@ module.exports = Backbone.Router.extend({
     },
 
     status: function () {
-        this.setRegion('content', new StatusView());
+        this.setRegion('content', new GuardianView());
     },
 
     defaultRoute: function () {
