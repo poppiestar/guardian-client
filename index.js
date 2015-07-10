@@ -27,6 +27,21 @@ server.route({
 });
 
 server.route({
+    method: 'POST',
+    path: '/login',
+    handler: function (request, reply) {
+        reply.view('login');
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/dashboard',
+    handler: function (request, reply) {
+        reply.view('dashboard');
+    }
+});
+server.route({
     method: 'GET',
     path: '/{param*}',
     handler: {
