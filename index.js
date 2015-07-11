@@ -41,6 +41,15 @@ server.route({
         reply.view('dashboard');
     }
 });
+
+server.route({
+    method: 'GET',
+    path: '/{system}/{username}',
+    handler: function (request, reply) {
+        reply.view('status');
+    }
+});
+
 server.route({
     method: 'GET',
     path: '/{param*}',
