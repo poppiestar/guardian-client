@@ -44,19 +44,29 @@ server.route({
 
 server.route({
     method: 'GET',
-    path: '/{system}/{username}',
-    handler: function (request, reply) {
-        reply.view('status');
+    path: '/css/{param*}',
+    handler: {
+        directory: {
+            path: 'public/css'
+        }
     }
 });
 
 server.route({
     method: 'GET',
-    path: '/{param*}',
+    path: '/js/{param*}',
     handler: {
         directory: {
-            path: 'public'
+            path: 'public/js'
         }
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/status/{system}/{username}',
+    handler: function (request, reply) {
+        reply.view('status');
     }
 });
 

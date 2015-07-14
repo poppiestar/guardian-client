@@ -2,9 +2,13 @@
 var Backbone = require('backbone');
 var _ = require('underscore');
 
-var template = require('../templates/Home.html');
+var template = require('../templates/Dashboard.html');
 
 module.exports = Backbone.View.extend({
+
+    initialize: function (options) {
+        this.nav = options.nav;
+    },
 
     template: _.template(template),
 
@@ -21,7 +25,8 @@ module.exports = Backbone.View.extend({
     submitForm: function (e) {
         e.preventDefault();
 
-        Backbone.history.navigate('status', true);
+        console.log(this.nav);
+        this.nav('status', true);
     }
 
 });

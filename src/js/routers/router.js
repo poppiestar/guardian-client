@@ -2,27 +2,32 @@
 var Backbone = require('backbone');
 
 var LayoutView = require('../views/LayoutView');
-var HomeView = require('../views/HomeView');
+var DashboardView = require('../views/DashboardView');
 var GuardianView = require('../views/GuardianView');
 
 module.exports = Backbone.Router.extend({
 
     initialize: function () {
+        this.nav = this.navigate.bind(this);
         this.layout = new LayoutView();
         this.layout.render();
     },
 
     routes: {
-        'status': 'status',
-        '*path': 'defaultRoute'
+        'status/:system/:username': 'status',
+        'dashboard': 'dashboard'
     },
 
-    status: function () {
-        this.setRegion('content', new GuardianView());
+    status: function (system, username) {
+        this.setRegion('content', new GuardianView({
+            nav: this.nav
+        }));
     },
 
-    defaultRoute: function () {
-        this.setRegion('content', new HomeView());
+    dashboard: function () {
+        this.setRegion('content', new DashboardView({
+            nav: this.nav
+        }));
     },
 
     setRegion: function (region, view) {
