@@ -3,180 +3,227 @@
 
 module.exports = [
     {
-        "name": "Crota’s End - Normal Mode",
-        "id": "crota:nm"
+        "name": "Raids",
+        "collection": true,
+        "items": [
+            {
+                "name": "Vault of Glass",
+                "id": "vog",
+                "type": "raid",
+                "collection": true,
+                "items": [
+                    {
+                        "name": "Normal Mode (26)",
+                        "id": "raid:vog:nm"
+                    },
+                    {
+                        "name": "Hard Mode (30)",
+                        "id": "raid:vog:nm"
+                    }
+                ]
+            },
+            {
+                "name": "Crota's End",
+                "id": "crota",
+                "type": "raid",
+                "collection": true,
+                "items": [
+                    {
+                        "name": "Normal Mode (30)",
+                        "id": "raid:crota:nm"
+                    },
+                    {
+                        "name": "Hard Mode (33)",
+                        "id": "raid:crota:hm"
+                    }
+                ]
+            }
+        ]
     },
     {
-        "name": "Crota’s End - Hard Mode",
-        "id": "crota:hm"
+        "name": "Prison of Elders",
+        "id": "poe",
+        "collection": true,
+        "items": [
+            {
+                "name": "(28)",
+                "id": "poe:28"
+            },
+            {
+                "name": "Level 32",
+                "id": "poe:32"
+            },
+            {
+                "name": "(34)",
+                "id": "poe:34"
+            },
+            {
+                "name": "Skolas's Revenge (35)",
+                "id": "poe:35"
+            }
+        ]
     },
     {
-        "name": "Vault of Glass - Normal Mode",
-        "id": "vog:nm"
+        "name": "Weekly Strikes",
+        "id": "weekly",
+        "collection": true,
+        "items": [
+            {
+                "name": "Weekly Nightfall Strike",
+                "collection": false,
+                "id": "weekly:nightfall"
+            },
+            {
+                "name": "Weekly Heroic Strike",
+                "id": "weekly:heroic",
+                "collection": true,
+                "items": [
+                    {
+                        "name": "Level 26",
+                        "id": "weekly:26"
+                    },
+                    {
+                        "name": "Level 28",
+                        "id": "weekly:28"
+                    },
+                    {
+                        "name": "Level 30",
+                        "id": "weekly:30"
+                    },
+                    {
+                        "name": "Level 32",
+                        "id": "weekly:32"
+                    }
+                ]
+            }
+        ]
     },
     {
-        "name": "Vault of Glass - Hard Mode",
-        "id": "vog:nm"
+        "name": "Strike",
+        "id": "strike",
+        "collection": true,
+        "items": [
+            {
+                "name": "Playlist",
+                "id": "strike:playlist",
+                "collection": true,
+                "items": [
+                    {
+                        "name": "Eagle (18)",
+                        "id": "strike:playlist:eagle"
+                    },
+                    {
+                        "name": "Viper (20)",
+                        "id": "strike:playlist:viper"
+                    },
+                    {
+                        "name": "Wolf (22)",
+                        "id": "strike:playlist:wolf"
+                    },
+                    {
+                        "name": "Tiger (24)",
+                        "id": "strike:playlist:tiger"
+                    },
+                    {
+                        "name": "Roc (26)",
+                        "id": "strike:playlist:roc"
+                    },
+                    {
+                        "name": "Dragon (28)",
+                        "id": "strike:playlist:dragon"
+                    }
+                ]
+            },
+            {
+                "name": "Mission",
+                "id": "strike:mission",
+                "collection": true,
+                "items": [
+                    {
+                        "name": "Strike - The Shadow Thief",
+                        "id": "strike:mission:shadow-thief"
+                    },
+                    {
+                        "name": "Strike - The Devil’s Lair",
+                        "id": "strike:mission:devils-lair"
+                    },
+                    {
+                        "name": "Strike - The Summoning Pits",
+                        "id": "strike:mission:summoning-pits"
+                    },
+                    {
+                        "name": "Strike - The Nexus",
+                        "id": "strike:mission:nexus"
+                    },
+                    {
+                        "name": "Strike - Winter’s Run",
+                        "id": "strike:mission:winters-run"
+                    },
+                    {
+                        "name": "Strike - Cerberus Vae III",
+                        "id": "strike:mission:cerverus-vae"
+                    },
+                    {
+                        "name": "Strike - Dust Palace",
+                        "id": "strike:mission:dust-palace"
+                    },
+                    {
+                        "name": "Strike - The Undying Mind",
+                        "id": "strike:mission:undying-mind"
+                    },
+                    {
+                        "name": "Strike - The Will of Crota",
+                        "id": "strike:mission:will-of-crota"
+                    }
+                ]
+            }
+        ]
     },
     {
-        "name": "Prison of Elders - Level 28",
-        "id": "poe:28"
+        "name": "Daily Heroic Mission",
+        "id": "daily",
+        "collection": true,
+        "items": [
+            {
+                "name": "Level 22",
+                "id": "daily:22"
+            },
+            {
+                "name": "Level 26",
+                "id": "daily:26"
+            },
+            {
+                "name": "Level 28",
+                "id": "daily:26"
+            },
+            {
+                "name": "Level 30",
+                "id": "daily:30"
+            },
+            {
+                "name": "Level 32",
+                "id": "daily:32"
+            }
+        ]
     },
     {
-        "name": "Prison of Elders - Level 32",
-        "id": "poe:32"
-    },
-    {
-        "name": "Prison of Elders - Level 34",
-        "id": "poe:34"
-    },
-    {
-        "name": "Prison of Elders - Level 35",
-        "id": "poe:35"
-    },
-    {
-        "name": "Trials of Osiris",
-        "id": "crucible:trials"
-    },
-    {
-        "name": "Weekly Nightfall Strike",
-        "id": "nightfall"
-    },
-    {
-        "name": "Weekly Heroic Strike - Level 26",
-        "id": "weekly:26"
-    },
-    {
-        "name": "Weekly Heroic Strike - Level 28",
-        "id": "weekly:28"
-    },
-    {
-        "name": "Weekly Heroic Strike - Level 30",
-        "id": "weekly:30"
-    },
-    {
-        "name": "Weekly Heroic Strike - Level 32",
-        "id": "weekly:32"
-    },
-    {
-        "name": "Strike Playlist - Eagle (18)",
-        "id": "strike:eagle"
-    },
-    {
-        "name": "Strike Playlist - Viper (20)",
-        "id": "strike:viper"
-    },
-    {
-        "name": "Strike Playlist - Wolf (22)",
-        "id": "strike:wolf"
-    },
-    {
-        "name": "Strike Playlist - Tiger (24)",
-        "id": "strike:tiger"
-    },
-    {
-        "name": "Strike Playlist - Roc (26)",
-        "id": "strike:roc"
-    },
-    {
-        "name": "Strike Playlist - Dragon (28)",
-        "id": "strike:dragon"
-    },
-    {
-        "name": "Strike - The Shadow Thief",
-        "id": "strike:shadow-thief"
-    },
-    {
-        "name": "Strike - The Devil’s Lair",
-        "id": "strike:devils-lair"
-    },
-    {
-        "name": "Strike - The Summoning Pits",
-        "id": "strike:summoning-pits"
-    },
-    {
-        "name": "Strike - The Nexus",
-        "id": "strike:nexus"
-    },
-    {
-        "name": "Strike - Winter’s Run",
-        "id": "strike:winters-run"
-    },
-    {
-        "name": "Strike - Cerberus Vae III",
-        "id": "strike:cerverus-vae"
-    },
-    {
-        "name": "Strike - Dust Palace",
-        "id": "strike:dust-palace"
-    },
-    {
-        "name": "Strike - The Undying Mind",
-        "id": "strike:undying-mind"
-    },
-    {
-        "name": "Strike - The Will of Crota",
-        "id": "strike:will-of-crota"
-    },
-    {
-        "name": "Story Mission",
-        "id": "story:mission"
-    },
-    {
-        "name": "Daily Heroic Story - Level 22",
-        "id": "daily:22"
-    },
-    {
-        "name": "Daily Heroic Story - Level 26",
-        "id": "daily:26"
-    },
-    {
-        "name": "Daily Heroic Story - Level 28",
-        "id": "daily:26"
-    },
-    {
-        "name": "Daily Heroic Story - Level 30",
-        "id": "daily:30"
-    },
-    {
-        "name": "Daily Heroic Story - Level 32",
-        "id": "daily:32"
-    },
-    {
-        "name": "Bounties",
-        "id": "bounties"
-    },
-    {
-        "name": "Patrol",
-        "id": "patrol"
-    },
-    {
-        "name": "Crucible - 3 Person",
-        "id": "crucible:3-person"
-    },
-    {
-        "name": "Crucible - 6 Person",
-        "id": "crucible:6-person"
-    },
-    {
-        "name": "Crucible - Doubles Skirmish",
-        "id": "crucible:doubles-skirmish"
-    },
-    {
-        "name": "Crucible - Iron Banner",
-        "id": "crucible:iron-banner"
-    },
-    {
-        "name": "Crucible - Salvage",
-        "id": "crucible:salvage"
-    },
-    {
-        "name": "Exotic Weapon Bounty",
-        "id": "exotic"
-    },
-    {
-        "name": "Queen’s Kill Order",
-        "id": "queen"
+        "name": "Crucible",
+        "id": "crucible",
+        "collection": true,
+        "items": [
+            {
+                "name": "Trials of Osiris",
+                "id": "crucible:trials"
+            },
+            {
+                "name": "Iron Banner",
+                "id": "crucible:iron-banner"
+            },
+            {
+                "name": "Salvage",
+                "id": "crucible:salvage"
+            }
+        ]
     }
 ];
 
