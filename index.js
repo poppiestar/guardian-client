@@ -2,6 +2,7 @@
 var Path = require('path');
 var Hapi = require('hapi');
 var Good = require('good');
+var _ = require('underscore');
 
 var allActivities = require('./activities');
 
@@ -41,17 +42,39 @@ server.route({
 });
 
 function prepareActivities (guardian) {
-    var activities = [];
+    var activities = _.map(allActivities, function (activity) {
+        var updated = {
+            name: activity.name,
+            id: activity.id
+        };
 
-    for (var activity in allActivities) {
-        var thing = allActivities[activity];
+        if (activity.items && _.isArray(activity.items)) {
+            updated.collection = true;
+            updated.items = _.map(activity.items, function (item) {
+                var thingy = {
+                    name: item.name,
+                    id: item.id
+                };
 
-        activities.push({
-            name: thing.name,
-            id: thing.id,
-            available: guardian.hasOwnProperty(thing.id) ? guardian[thing.id] : false
-        });
-    }
+                if (item.items && _.isArray(item.items) ) {
+                    thingy.collection = true;
+                    thingy.items = _.map(item.items, function (last) {
+                        return {
+                            name: last.name,
+                            id: last.id,
+                            available: guardian.hasOwnProperty(last.id) ? guardian[last.id] : false
+                        };
+                    });
+                } else {
+                    thingy.available = guardian.hasOwnProperty(item.id) ? guardian[item.id] : false;
+                }
+
+                return thingy;
+            });
+        }
+
+        return updated;
+    });
 
     return activities;
 }
@@ -64,8 +87,10 @@ server.route({
             username: 'poppiestar95',
             status: 'Looking for a Black Hammer, Crota NM anyone?',
             activities: prepareActivities({
-                'patrol': true,
-                'nightfall': false
+                'poe:32': true,
+                'crucible:trials': true,
+                'raid:vog:30': true,
+                'weekly:nightfall': true
             })
         });
     }
@@ -95,7 +120,16 @@ server.route({
     method: 'GET',
     path: '/status/{system}/{username}',
     handler: function (request, reply) {
-        reply.view('status');
+        // query the db and find the user 
+
+        reply.view('dashboard', {
+            username: 'poppiestar95',
+            status: 'Looking for a Black Hammer, Crota NM anyone?',
+            activities: prepareActivities({
+                'raid:vog:': true,
+                'nightfall': false
+            })
+        });
     }
 });
 

@@ -11,9 +11,30 @@
 
     <h2>Activities</h2>
 
+    <ul class="activities">
     {{#activities}}
-        <p>{{ name }}: {{ available }}</p>
+        <li class="activity">
+            <h2 class="activity__title">{{ name }}</h2>
+            <ul class="activity__group">
+                {{#items}}
+                    {{#collection}}
+                        <li class="activity">
+                            <h2 class="activity__title">{{ name }}</h2>
+                            <ul class="activity__group">
+                                {{#items}}
+                                    <li class="group__name">{{ name }}: {{ available }} ({{ id }})</li>
+                                {{/items}}
+                            </ul>
+                        </li>
+                    {{/collection}}
+                    {{^collection}}
+                        <li class="group__name">{{ name }}: {{ available }} ({{ id }})</li>
+                    {{/collection}}
+                {{/items}}
+            </ul>
+        </li>
     {{/activities}}
+    </ul>
 </body>
 </html>
 

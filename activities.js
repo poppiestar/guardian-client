@@ -4,37 +4,36 @@
 module.exports = [
     {
         "name": "Raids",
+        "id": "raid",
         "collection": true,
         "items": [
             {
                 "name": "Vault of Glass",
-                "id": "vog",
-                "type": "raid",
+                "id": "raid:vog",
                 "collection": true,
                 "items": [
                     {
                         "name": "Normal Mode (26)",
-                        "id": "raid:vog:nm"
+                        "id": "raid:vog:26"
                     },
                     {
                         "name": "Hard Mode (30)",
-                        "id": "raid:vog:nm"
+                        "id": "raid:vog:30"
                     }
                 ]
             },
             {
                 "name": "Crota's End",
-                "id": "crota",
-                "type": "raid",
+                "id": "raid:crota",
                 "collection": true,
                 "items": [
                     {
                         "name": "Normal Mode (30)",
-                        "id": "raid:crota:nm"
+                        "id": "raid:crota:30"
                     },
                     {
                         "name": "Hard Mode (33)",
-                        "id": "raid:crota:hm"
+                        "id": "raid:crota:33"
                     }
                 ]
             }
@@ -50,7 +49,7 @@ module.exports = [
                 "id": "poe:28"
             },
             {
-                "name": "Level 32",
+                "name": "(32)",
                 "id": "poe:32"
             },
             {
