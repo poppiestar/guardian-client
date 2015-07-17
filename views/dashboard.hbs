@@ -22,13 +22,13 @@
                             <h2 class="activity__title">{{ name }}</h2>
                             <ul class="activity__group">
                                 {{#items}}
-                                    <li class="group__name">{{ name }}: <input type="checkbox" name="{{ id }}" id="{{ id }}"{{#available}} checked{{/available}}> ({{ id }})</li>
+                                    <li class="group__name">{{ name }}: <input type="checkbox" name="{{ id }}" id="{{ id }}"{{#available}} checked{{/available}}></li>
                                 {{/items}}
                             </ul>
                         </li>
                     {{/collection}}
                     {{^collection}}
-                        <li class="group__name">{{ name }}: <input type="checkbox" name="{{ id }}" id="{{ id }}"{{#available}} checked{{/available}}> ({{ id }})</li>
+                        <li class="group__name">{{ name }}: <input type="checkbox" name="{{ id }}" id="{{ id }}"{{#available}} checked{{/available}}></li>
                     {{/collection}}
                 {{/items}}
             </ul>
