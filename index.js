@@ -18,7 +18,11 @@ server.views({
         }
     },
     relativeTo: __dirname,
-    path: Path.join(__dirname, 'views')
+    path: Path.join(__dirname, 'views'),
+    layoutPath: Path.join(__dirname, 'views', 'layout'),
+    layout: true,
+    isCached: false,
+    partialsPath: Path.join(__dirname, 'views', 'partials')
 });
 
 server.route({
