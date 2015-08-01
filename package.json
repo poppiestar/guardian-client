@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp"
+    "build": "gulp",
+    "lint": "jshint **/*.js"
   },
   "author": "Drew Miller",
   "license": "MIT",
@@ -25,8 +26,14 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-stylint": "^1.1.3",
     "gulp-stylus": "^2.0.3",
+    "jshint": "^2.8.0",
     "stringify": "^3.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "jshintConfig": {
+    "globals": {
+      "module": true
+    }
   }
 }
