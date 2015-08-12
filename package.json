@@ -13,7 +13,6 @@
   "dependencies": {
     "PSNjs": "^0.1.1",
     "backbone": "^1.2.1",
-    "foundation-sites": "^5.5.2",
     "good": "^6.3.0",
     "good-console": "^5.0.2",
     "handlebars": "^3.0.3",
