@@ -17,6 +17,7 @@ server.views({
     relativeTo: __dirname,
     path: Path.join(__dirname, 'views'),
     layoutPath: Path.join(__dirname, 'views', 'layout'),
+    helpersPath: Path.join(__dirname, 'views', 'helpers'),
     layout: true,
     isCached: false,
     partialsPath: Path.join(__dirname, 'views', 'partials')

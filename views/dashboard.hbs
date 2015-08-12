@@ -1,33 +1,33 @@
-<h1>{{ username }} (PSN)</h1>
-<p>{{ status }}</p>
+<h1>{{ status.username }} ({{ status.system }})</h1>
+<p>{{ status.status }}</p>
 
 <h2>Activities</h2>
 
-<form action="/status/{{ system }}/{{ username }}" method="post">
+<form action="/status/{{ status.system }}/{{ status.username }}" method="post">
     <ul class="activities">
         <button>Update activities</button>
-    {{#activities}}
-        <li class="activity">
-            <h2 class="activity__title">{{ name }}</h2>
-            <ul class="activity__group">
-                {{#items}}
-                    {{#collection}}
-                        <li class="activity">
-                            <h2 class="activity__title">{{ name }}</h2>
-                            <ul class="activity__group">
-                                {{#items}}
-                                    <li class="group__name">{{ name }}: <input type="checkbox" name="{{ id }}" id="{{ id }}"{{#available}} checked{{/available}}></li>
-                                {{/items}}
-                            </ul>
-                        </li>
-                    {{/collection}}
-                    {{^collection}}
-                        <li class="group__name">{{ name }}: <input type="checkbox" name="{{ id }}" id="{{ id }}"{{#available}} checked{{/available}}></li>
-                    {{/collection}}
-                {{/items}}
-            </ul>
-        </li>
-    {{/activities}}
+        {{#each activities}}
+            <li class="activity">
+                <h2 class="activity__title">{{ name }}</h2>
+                <ul class="activity__group">
+                    {{#items}}
+                        {{#collection}}
+                            <li class="activity">
+                                <h2 class="activity__title">{{ name }}</h2>
+                                <ul class="activity__group">
+                                    {{#items}}
+                                        <li class="group__name">{{ name }}: <input type="checkbox" name="activity" id="{{ id }}" value="{{ id}}" {{#activityCheck ../../../../status.activities id}} checked{{/activityCheck}}></li>
+                                    {{/items}}
+                                </ul>
+                            </li>
+                        {{/collection}}
+                        {{^collection}}
+                            <li class="group__name">{{ name }}: <input type="checkbox" name="activity" value="{{ id }}" id="activity"{{#activityCheck ../../../status.activities id}} checked{{/activityCheck}}></li>
+                        {{/collection}}
+                    {{/items}}
+                </ul>
+            </li>
+        {{/each}}
     </ul>
 </form>
 
