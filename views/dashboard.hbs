@@ -4,6 +4,9 @@
 <h2>Activities</h2>
 
 <form action="/status/{{ status.system }}/{{ status.username }}" method="post">
+    <input type="hidden" name="username" value="{{ status.username }}">
+    <input type="hidden" name="system" value="{{ status.system }}">
+    <input type="hidden" name="status" value="{{ status.status }}">
     <ul class="activities">
         <button>Update activities</button>
         {{#each activities}}
@@ -16,13 +19,13 @@
                                 <h2 class="activity__title">{{ name }}</h2>
                                 <ul class="activity__group">
                                     {{#items}}
-                                        <li class="group__name">{{ name }}: <input type="checkbox" name="activity" id="{{ id }}" value="{{ id}}" {{#activityCheck ../../../../status.activities id}} checked{{/activityCheck}}></li>
+                                        <li class="group__name">{{ name }}: <input type="checkbox" name="activities" id="{{ id }}" value="{{ id}}" {{#activityCheck ../../../../status.activities id}} checked{{/activityCheck}}></li>
                                     {{/items}}
                                 </ul>
                             </li>
                         {{/collection}}
                         {{^collection}}
-                            <li class="group__name">{{ name }}: <input type="checkbox" name="activity" value="{{ id }}" id="activity"{{#activityCheck ../../../status.activities id}} checked{{/activityCheck}}></li>
+                            <li class="group__name">{{ name }}: <input type="checkbox" name="activities" value="{{ id }}" id="activity"{{#activityCheck ../../../status.activities id}} checked{{/activityCheck}}></li>
                         {{/collection}}
                     {{/items}}
                 </ul>

@@ -1,7 +1,6 @@
 
 var Path = require('path');
 var Hapi = require('hapi');
-var Good = require('good');
 
 var server = new Hapi.Server();
 
@@ -25,8 +24,8 @@ server.views({
 
 server.route(require('./lib/routes'));
 
-server.register({
-    register: Good,
+server.register([{
+    register: require('good'),
     options: {
         reporters: [{
             reporter: require('good-console'),
@@ -35,8 +34,20 @@ server.register({
                 log: '*'
             }
         }]
-    }
-}, function (err) {
+        }
+    },
+    {
+        register: require('hapi-mongodb'),
+        options: {
+            url: "mongodb://localhost:27017/guardians",
+            settings: {
+                db: {
+                    native_parser: false
+                }
+            }
+        }
+    }], 
+    function (err) {
     if (err) {
         throw err;
     }
