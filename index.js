@@ -22,6 +22,16 @@ server.views({
     partialsPath: Path.join(__dirname, 'views', 'partials')
 });
 
+server.register(require('hapi-auth-cookie'), function (err) {
+
+    server.auth.strategy('session', 'cookie', {
+        password: 'secret',
+        cookie: 'sid-example',
+        redirectTo: '/',
+        isSecure: false
+    });
+});
+
 server.route(require('./lib/routes'));
 
 server.register([{
