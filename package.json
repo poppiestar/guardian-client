@@ -11,10 +11,10 @@
   "author": "Drew Miller",
   "license": "MIT",
   "dependencies": {
-    "PSNjs": "^0.1.1",
-    "backbone": "^1.2.1",
+    "PSNjs": "^0.1.2",
+    "backbone": "^1.2.3",
     "good": "^6.3.0",
-    "good-console": "^5.0.2",
+    "good-console": "^5.0.3",
     "handlebars": "^3.0.3",
     "hapi": "^8.8.1",
     "hapi-auth-cookie": "^3.1.0",
