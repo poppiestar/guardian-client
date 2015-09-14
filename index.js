@@ -23,7 +23,6 @@ server.views({
 });
 
 server.register(require('hapi-auth-cookie'), function (err) {
-
     server.auth.strategy('session', 'cookie', {
         password: 'secret',
         cookie: 'sid-example',
@@ -54,6 +53,16 @@ server.register([{
                 db: {
                     native_parser: false
                 }
+            }
+        }
+    },
+    {
+        register: require('yar'),
+        options: {
+            storeBlank: false,
+            cookieOptions: {
+                password: 'password',
+                isSecure: false
             }
         }
     }], 
